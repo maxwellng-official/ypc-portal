@@ -1,0 +1,72 @@
+/* ================================================
+   VARIABLES & GLOBAL STYLES
+   ================================================ */
+
+:root {
+  --navy:       #0a1628;
+  --navy2:      #112240;
+  --blue:       #1565c0;
+  --blue-bright:#1e88e5;
+  --cyan:       #00b4d8;
+  --cyan-light: #90e0ef;
+  --gold:       #f4a100;
+  --gold-light: #ffd166;
+  --white:      #f8faff;
+  --gray:       #8892a4;
+  --gray-light: #c8d0e0;
+  --card:       #14243d;
+  --card2:      #1a2f4a;
+  --green:      #06d6a0;
+  --red:        #ef476f;
+  --purple:     #7c3aed;
+  --radius:     18px;
+  --radius-sm:  10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+
+.phone-wrap {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Screens */
+.screen {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  animation: fadeIn .3s ease;
+}
+.screen.active { display: flex; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar hide */
+.dash-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+.dash-scroll::-webkit-scrollbar,
+#profile::-webkit-scrollbar { display: none; }
