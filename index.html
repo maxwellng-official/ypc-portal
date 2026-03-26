@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>YPC Student</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets (order matters) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div class="phone-wrap">
+
+  <!-- Each page lives in its own file inside /pages -->
+  <!-- Login    → pages/login.html    -->
+  <!-- Dashboard→ pages/dashboard.html -->
+  <!-- Attendance→pages/attendance.html-->
+  <!-- Results  → pages/results.html  -->
+  <!-- Schedule → pages/schedule.html -->
+  <!-- Profile  → pages/profile.html  -->
+
+  <!-- Inline includes (copy-paste each page's content here,
+       OR use a build tool / server-side includes to load them) -->
+
+  <!-- ▼▼ PASTE pages/login.html content below ▼▼ -->
+  <div class="screen active" id="login">
+    <div class="login-bg-circle c1"></div>
+    <div class="login-bg-circle c2"></div>
+    <div class="login-logo">
+      <div class="logo-badge">YPC</div>
+      <h1>YPC International College</h1>
+      <p>Student Portal</p>
+    </div>
+    <div class="login-card">
+      <h2>Welcome back 👋</h2>
+      <p>Sign in to your student account</p>
+      <div class="input-group">
+        <label>STUDENT ID</label>
+        <input type="text" placeholder="e.g. 23BIS12345" value="23BIS12345">
+      </div>
+      <div class="input-group">
+        <label>PASSWORD</label>
+        <input type="password" placeholder="Enter your password" value="••••••••">
+      </div>
+      <button class="btn-primary" onclick="goTo('dashboard')">Sign In →</button>
+    </div>
+  </div>
+
+  <!-- ▼▼ PASTE pages/dashboard.html content below ▼▼ -->
+  <div class="screen" id="dashboard">
+    <div class="status-bar"><span class="js-clock">9:57 PM</span><div class="status-icons"><span>📶</span><span>🔋</span></div></div>
+    <div class="top-header">
+      <div style="width:36px"></div>
+      <div style="text-align:center;font-size:13px;font-weight:700;color:var(--gray)">YPC STUDENT</div>
+      <div class="notif-btn" onclick="alert('4 new announcements')">🔔<div class="notif-dot"></div></div>
+    </div>
+    <div class="dash-scroll">
+      <div class="greeting-section">
+        <div class="sub">Good Evening</div>
+        <h1>Maxwell Ng<br>Yi Ken 👋</h1>
+        <div class="date">Friday, 6 March 2026 · Sem Jan–Apr 2026</div>
+      </div>
+      <div class="id-card">
+        <div class="id-card-top">
+          <div class="avatar">M</div>
+          <div class="id-info">
+            <div class="name">Maxwell Ng Yi Ken</div>
+            <div class="id">ID: 23BIS12345</div>
+            <div class="prog">Diploma in Business Information Systems</div>
+          </div>
+        </div>
+        <div class="id-stats">
+          <div class="id-stat"><div class="val good">3.65</div><div class="lbl">Current GPA</div></div>
+          <div class="id-stat"><div class="val ok">87%</div><div class="lbl">Attendance</div></div>
+          <div class="id-stat"><div class="val">Sem 4</div><div class="lbl">Progress</div></div>
+        </div>
+      </div>
+      <div class="section-title"><h3>Quick Access</h3></div>
+      <div class="quick-actions">
+        <div class="qa-item" onclick="goTo('attendance')"><div class="qa-icon" style="background:linear-gradient(135deg,#065f46,#059669)">📊</div><span>Attendance</span></div>
+        <div class="qa-item" onclick="goTo('results')"><div class="qa-icon" style="background:linear-gradient(135deg,#4c1d95,#7c3aed)">🏆</div><span>Results</span></div>
+        <div class="qa-item" onclick="goTo('schedule')"><div class="qa-icon" style="background:linear-gradient(135deg,#7c2d12,#ea580c)">📅</div><span>Schedule</span></div>
+        <div class="qa-item" onclick="goTo('profile')"><div class="qa-icon" style="background:linear-gradient(135deg,#1e3a5f,#1565c0)">👤</div><span>Profile</span></div>
+      </div>
+      <div class="section-title"><h3>Today's Classes</h3><a onclick="goTo('schedule')">See all →</a></div>
+      <div class="schedule-strip">
+        <div class="sched-card"><div class="sched-time">08:00<br>10:00</div><div class="sched-dot" style="background:#06d6a0"></div><div class="sched-info"><div class="subj">Business Mathematics</div><div class="loc">📍 Block A, Room 203</div></div><span class="sched-badge chip chip-green">Done</span></div>
+        <div class="sched-card" style="border-color:rgba(0,180,216,.25)"><div class="sched-time">10:00<br>12:00</div><div class="sched-dot" style="background:#00b4d8"></div><div class="sched-info"><div class="subj">Database Systems</div><div class="loc">📍 Lab 2, IT Block</div></div><span class="sched-badge chip chip-blue">Now</span></div>
+        <div class="sched-card"><div class="sched-time">02:00<br>04:00</div><div class="sched-dot" style="background:#8892a4"></div><div class="sched-info"><div class="subj">Communication Skills</div><div class="loc">📍 Block C, Room 105</div></div><span class="sched-badge chip chip-yellow">2h left</span></div>
+      </div>
+      <div class="section-title"><h3>Announcements</h3></div>
+      <div class="announcements">
+        <div class="ann-card"><div class="ann-tag">📢 Evaluation</div><div class="ann-title">Online Evaluation for Foundation (Jan–Apr 2026)</div><div class="ann-meta">By HAMIZA YAZMIN · 02 Mar 2026</div></div>
+        <div class="ann-card"><div class="ann-tag">📋 Results</div><div class="ann-title">Degree results and resit procedure for Sep–Dec 2025</div><div class="ann-meta">By HAMIZA YAZMIN · 27 Feb 2026</div></div>
+        <div class="ann-card"><div class="ann-tag">🚌 Transport</div><div class="ann-title">Bus schedule during Ramadhan 2026</div><div class="ann-meta">By HAMIZA YAZMIN · 23 Feb 2026</div></div>
+      </div>
+    </div>
+    <nav class="bottom-nav">
+      <div class="nav-item active" onclick="goTo('dashboard')"><span class="ni">🏠</span><div class="nav-active-dot"></div><span class="nl" style="color:var(--cyan)">Home</span></div>
+      <div class="nav-item" onclick="goTo('attendance')"><span class="ni">📊</span><span class="nl">Attendance</span></div>
+      <div class="nav-item" onclick="goTo('results')"><span class="ni">🏆</span><span class="nl">Results</span></div>
+      <div class="nav-item" onclick="goTo('schedule')"><span class="ni">📅</span><span class="nl">Schedule</span></div>
+      <div class="nav-item" onclick="goTo('profile')"><span class="ni">👤</span><span class="nl">Profile</span></div>
+    </nav>
+  </div>
+
+  <!-- ▼▼ PASTE pages/attendance.html content below ▼▼ -->
+  <div class="screen" id="attendance">
+    <div class="status-bar"><span class="js-clock">9:57 PM</span><div class="status-icons"><span>📶</span><span>🔋</span></div></div>
+    <div class="top-header"><div class="back-btn" onclick="goTo('dashboard')">←</div><h2>Attendance</h2><div style="width:36px"></div></div>
+    <div class="dash-scroll">
+      <div class="attend-summary">
+        <h3>Overall Attendance — Jan–Apr 2026</h3>
+        <div class="attend-ring-row">
+          <div class="ring-wrap">
+            <svg width="90" height="90" viewBox="0 0 90 90">
+              <circle cx="45" cy="45" r="38" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="8"/>
+              <circle cx="45" cy="45" r="38" fill="none" stroke="url(#ringGrad)" stroke-width="8" stroke-dasharray="238.76" stroke-dashoffset="31" stroke-linecap="round"/>
+              <defs><linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00b4d8"/><stop offset="100%" stop-color="#06d6a0"/></linearGradient></defs>
+            </svg>
+            <div class="ring-center"><div class="pct" style="color:#06d6a0">87%</div><div class="lbl">Overall</div></div>
+          </div>
+          <div class="attend-detail">
+            <div class="att-row"><span class="ar-lbl">Total Classes</span><span class="ar-val">156</span></div>
+            <div class="att-row"><span class="ar-lbl">Attended</span><span class="ar-val" style="color:var(--green)">136</span></div>
+            <div class="att-row"><span class="ar-lbl">Absent</span><span class="ar-val" style="color:var(--red)">20</span></div>
+            <div class="att-row"><span class="ar-lbl">Min. Required</span><span class="ar-val" style="color:var(--gold)">80%</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="section-title"><h3>By Subject</h3></div>
+      <div class="subject-attend">
+        <div class="sa-card"><div class="sa-top"><span class="sa-subj">Database Systems</span><span class="sa-pct" style="color:#06d6a0">92%</span></div><div class="sa-bar"><div class="sa-fill" style="width:92%;background:linear-gradient(90deg,#059669,#06d6a0)"></div></div><div class="sa-foot"><span>23/25 classes</span><span class="chip chip-green">✓ Safe</span></div></div>
+        <div class="sa-card"><div class="sa-top"><span class="sa-subj">Business Mathematics</span><span class="sa-pct" style="color:#06d6a0">88%</span></div><div class="sa-bar"><div class="sa-fill" style="width:88%;background:linear-gradient(90deg,#059669,#06d6a0)"></div></div><div class="sa-foot"><span>22/25 classes</span><span class="chip chip-green">✓ Safe</span></div></div>
+        <div class="sa-card"><div class="sa-top"><span class="sa-subj">Communication Skills</span><span class="sa-pct" style="color:var(--gold)">84%</span></div><div class="sa-bar"><div class="sa-fill" style="width:84%;background:linear-gradient(90deg,#b45309,#f4a100)"></div></div><div class="sa-foot"><span>21/25 classes</span><span class="chip chip-yellow">⚠ Watch</span></div></div>
+        <div class="sa-card"><div class="sa-top"><span class="sa-subj">Principles of Marketing</span><span class="sa-pct" style="color:var(--red)">76%</span></div><div class="sa-bar"><div class="sa-fill" style="width:76%;background:linear-gradient(90deg,#9f1239,#ef476f)"></div></div><div class="sa-foot"><span>19/25 classes</span><span class="chip chip-red">⚠ At Risk</span></div></div>
+        <div class="sa-card"><div class="sa-top"><span class="sa-subj">Introduction to Programming</span><span class="sa-pct" style="color:#06d6a0">96%</span></div><div class="sa-bar"><div class="sa-fill" style="width:96%;background:linear-gradient(90deg,#059669,#06d6a0)"></div></div><div class="sa-foot"><span>24/25 classes</span><span class="chip chip-green">✓ Safe</span></div></div>
+      </div>
+      <div style="height:20px"></div>
+    </div>
+    <nav class="bottom-nav">
+      <div class="nav-item" onclick="goTo('dashboard')"><span class="ni">🏠</span><span class="nl">Home</span></div>
+      <div class="nav-item active" onclick="goTo('attendance')"><span class="ni">📊</span><div class="nav-active-dot"></div><span class="nl" style="color:var(--cyan)">Attendance</span></div>
+      <div class="nav-item" onclick="goTo('results')"><span class="ni">🏆</span><span class="nl">Results</span></div>
+      <div class="nav-item" onclick="goTo('schedule')"><span class="ni">📅</span><span class="nl">Schedule</span></div>
+      <div class="nav-item" onclick="goTo('profile')"><span class="ni">👤</span><span class="nl">Profile</span></div>
+    </nav>
+  </div>
+
+  <!-- ▼▼ PASTE pages/results.html content below ▼▼ -->
+  <div class="screen" id="results">
+    <div class="status-bar"><span class="js-clock">9:57 PM</span><div class="status-icons"><span>📶</span><span>🔋</span></div></div>
+    <div class="top-header"><div class="back-btn" onclick="goTo('dashboard')">←</div><h2>Exam Results</h2><div style="width:36px"></div></div>
+    <div class="dash-scroll">
+      <div class="gpa-card"><div class="gpa-lbl">Cumulative GPA</div><div class="gpa-val">3.65</div><div class="gpa-sub">Dean's List Eligible 🏅</div><div class="gpa-sem">Semester 4 · Jan–Apr 2026</div></div>
+      <div class="section-title"><h3>Current Semester</h3></div>
+      <div class="result-list">
+        <div class="res-card"><div class="grade-badge" style="background:rgba(6,214,160,.15);color:#06d6a0">A</div><div class="res-info"><div class="res-subj">Database Systems</div><div class="res-code">BIS2204</div></div><div class="res-score"><div class="score" style="color:#06d6a0">88</div><div class="credits">3 Credits</div></div></div>
+        <div class="res-card"><div class="grade-badge" style="background:rgba(6,214,160,.15);color:#06d6a0">A-</div><div class="res-info"><div class="res-subj">Introduction to Programming</div><div class="res-code">BIS2101</div></div><div class="res-score"><div class="score" style="color:#06d6a0">84</div><div class="credits">3 Credits</div></div></div>
+        <div class="res-card"><div class="grade-badge" style="background:rgba(244,161,0,.15);color:#f4a100">B+</div><div class="res-info"><div class="res-subj">Business Mathematics</div><div class="res-code">BIS2301</div></div><div class="res-score"><div class="score" style="color:#f4a100">76</div><div class="credits">3 Credits</div></div></div>
+        <div class="res-card"><div class="grade-badge" style="background:rgba(244,161,0,.15);color:#f4a100">B</div><div class="res-info"><div class="res-subj">Principles of Marketing</div><div class="res-code">BIS2401</div></div><div class="res-score"><div class="score" style="color:#f4a100">72</div><div class="credits">3 Credits</div></div></div>
+        <div class="res-card"><div class="grade-badge" style="background:rgba(30,136,229,.15);color:#1e88e5">B-</div><div class="res-info"><div class="res-subj">Communication Skills</div><div class="res-code">MPU2313</div></div><div class="res-score"><div class="score" style="color:#1e88e5">68</div><div class="credits">2 Credits</div></div></div>
+      </div>
+      <div style="height:20px"></div>
+    </div>
+    <nav class="bottom-nav">
+      <div class="nav-item" onclick="goTo('dashboard')"><span class="ni">🏠</span><span class="nl">Home</span></div>
+      <div class="nav-item" onclick="goTo('attendance')"><span class="ni">📊</span><span class="nl">Attendance</span></div>
+      <div class="nav-item active" onclick="goTo('results')"><span class="ni">🏆</span><div class="nav-active-dot"></div><span class="nl" style="color:var(--cyan)">Results</span></div>
+      <div class="nav-item" onclick="goTo('schedule')"><span class="ni">📅</span><span class="nl">Schedule</span></div>
+      <div class="nav-item" onclick="goTo('profile')"><span class="ni">👤</span><span class="nl">Profile</span></div>
+    </nav>
+  </div>
+
+  <!-- ▼▼ PASTE pages/schedule.html content below ▼▼ -->
+  <div class="screen" id="schedule">
+    <div class="status-bar"><span class="js-clock">9:57 PM</span><div class="status-icons"><span>📶</span><span>🔋</span></div></div>
+    <div class="top-header"><div class="back-btn" onclick="goTo('dashboard')">←</div><h2>Class Schedule</h2><div style="width:36px"></div></div>
+    <div class="dash-scroll">
+      <div class="day-tabs">
+        <div class="day-tab">Mon</div><div class="day-tab">Tue</div><div class="day-tab">Wed</div>
+        <div class="day-tab">Thu</div><div class="day-tab active">Fri</div><div class="day-tab">Sat</div>
+      </div>
+      <div class="full-schedule">
+        <div class="fs-card"><div class="fs-time-col"><div class="fst">08:00</div><div class="fst">10:00</div></div><div class="fs-line" style="background:linear-gradient(to bottom,#06d6a0,transparent)"></div><div class="fs-body"><div class="fs-subj">Business Mathematics</div><div class="fs-lec">👨‍🏫 Dr. Ahmad Fadzli</div><div class="fs-room">📍 Block A · Room 203</div></div><div class="fs-type chip chip-green">Lecture</div></div>
+        <div class="fs-card" style="border-color:rgba(0,180,216,.2)"><div class="fs-time-col"><div class="fst">10:00</div><div class="fst">12:00</div></div><div class="fs-line" style="background:linear-gradient(to bottom,#00b4d8,transparent)"></div><div class="fs-body"><div class="fs-subj">Database Systems</div><div class="fs-lec">👩‍🏫 Ms. Nurul Ain</div><div class="fs-room">📍 IT Block · Lab 2</div></div><div class="fs-type chip chip-blue">Lab</div></div>
+        <div class="fs-card"><div class="fs-time-col"><div class="fst">14:00</div><div class="fst">16:00</div></div><div class="fs-line" style="background:linear-gradient(to bottom,#f4a100,transparent)"></div><div class="fs-body"><div class="fs-subj">Communication Skills</div><div class="fs-lec">👩‍🏫 Pn. Siti Hajar</div><div class="fs-room">📍 Block C · Room 105</div></div><div class="fs-type chip chip-yellow">Tutorial</div></div>
+      </div>
+      <div style="height:20px"></div>
+    </div>
+    <nav class="bottom-nav">
+      <div class="nav-item" onclick="goTo('dashboard')"><span class="ni">🏠</span><span class="nl">Home</span></div>
+      <div class="nav-item" onclick="goTo('attendance')"><span class="ni">📊</span><span class="nl">Attendance</span></div>
+      <div class="nav-item" onclick="goTo('results')"><span class="ni">🏆</span><span class="nl">Results</span></div>
+      <div class="nav-item active" onclick="goTo('schedule')"><span class="ni">📅</span><div class="nav-active-dot"></div><span class="nl" style="color:var(--cyan)">Schedule</span></div>
+      <div class="nav-item" onclick="goTo('profile')"><span class="ni">👤</span><span class="nl">Profile</span></div>
+    </nav>
+  </div>
+
+  <!-- ▼▼ PASTE pages/profile.html content below ▼▼ -->
+  <div class="screen" id="profile">
+    <div class="status-bar"><span class="js-clock">9:57 PM</span><div class="status-icons"><span>📶</span><span>🔋</span></div></div>
+    <div class="top-header"><div class="back-btn" onclick="goTo('dashboard')">←</div><h2>My Profile</h2><div style="width:36px"></div></div>
+    <div class="profile-hero">
+      <div class="profile-avatar">M</div>
+      <h2>Maxwell Ng Yi Ken</h2>
+      <div class="pid">23BIS12345</div>
+      <div class="pprog">Diploma in Business Information Systems</div>
+    </div>
+    <div class="info-section">
+      <div class="info-card">
+        <div class="info-card-head">Academic Info</div>
+        <div class="info-row"><span class="ir-icon">🎓</span><span class="ir-lbl">Programme</span><span class="ir-val">Diploma BIS</span></div>
+        <div class="info-row"><span class="ir-icon">📅</span><span class="ir-lbl">Intake</span><span class="ir-val">Jan 2024</span></div>
+        <div class="info-row"><span class="ir-icon">📚</span><span class="ir-lbl">Semester</span><span class="ir-val">4 of 6</span></div>
+        <div class="info-row"><span class="ir-icon">⭐</span><span class="ir-lbl">CGPA</span><span class="ir-val" style="color:#06d6a0">3.65</span></div>
+        <div class="info-row"><span class="ir-icon">📊</span><span class="ir-lbl">Status</span><span class="ir-val"><span class="chip chip-green">Active</span></span></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-head">Personal Info</div>
+        <div class="info-row"><span class="ir-icon">📧</span><span class="ir-lbl">Email</span><span class="ir-val" style="font-size:11px">maxwell@student.ypc.edu.my</span></div>
+        <div class="info-row"><span class="ir-icon">📱</span><span class="ir-lbl">Phone</span><span class="ir-val">+60 12-345 6789</span></div>
+        <div class="info-row"><span class="ir-icon">🏠</span><span class="ir-lbl">IC No.</span><span class="ir-val">050312-14-XXXX</span></div>
+      </div>
+    </div>
+    <div class="menu-list">
+      <div class="menu-item" onclick="alert('Exam Slip - Coming Soon')"><div class="menu-icon" style="background:rgba(0,180,216,.15)">📄</div><span class="menu-label">Exam Slip</span><span class="menu-arrow">›</span></div>
+      <div class="menu-item" onclick="alert('Document Checklist - Coming Soon')"><div class="menu-icon" style="background:rgba(244,161,0,.15)">📋</div><span class="menu-label">Document Checklist</span><span class="menu-arrow">›</span></div>
+      <div class="menu-item" onclick="alert('Online Notes - Coming Soon')"><div class="menu-icon" style="background:rgba(124,58,237,.15)">📝</div><span class="menu-label">Online Notes</span><span class="menu-arrow">›</span></div>
+      <div class="menu-item" onclick="alert('OPAC Library - Coming Soon')"><div class="menu-icon" style="background:rgba(6,214,160,.15)">📚</div><span class="menu-label">OPAC Library</span><span class="menu-arrow">›</span></div>
+      <div class="menu-item" onclick="alert('Change Password - Coming Soon')"><div class="menu-icon" style="background:rgba(239,71,111,.15)">🔒</div><span class="menu-label">Change Password</span><span class="menu-arrow">›</span></div>
+    </div>
+    <button class="logout-btn" onclick="goTo('login')">Sign Out</button>
+    <nav class="bottom-nav">
+      <div class="nav-item" onclick="goTo('dashboard')"><span class="ni">🏠</span><span class="nl">Home</span></div>
+      <div class="nav-item" onclick="goTo('attendance')"><span class="ni">📊</span><span class="nl">Attendance</span></div>
+      <div class="nav-item" onclick="goTo('results')"><span class="ni">🏆</span><span class="nl">Results</span></div>
+      <div class="nav-item" onclick="goTo('schedule')"><span class="ni">📅</span><span class="nl">Schedule</span></div>
+      <div class="nav-item active" onclick="goTo('profile')"><span class="ni">👤</span><div class="nav-active-dot"></div><span class="nl" style="color:var(--cyan)">Profile</span></div>
+    </nav>
+  </div>
+
+</div><!-- end phone-wrap -->
+
+<!-- JavaScript -->
+<script src="js/app.js"></script>
+</body>
+</html>
